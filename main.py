@@ -16,6 +16,7 @@ import hashlib
 from datetime import datetime
 import uvicorn
 import onnxruntime
+import multipart
 
 # Configure logging
 logging.basicConfig(
