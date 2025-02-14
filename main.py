@@ -167,11 +167,6 @@ async def remove_background(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 if __name__ == "__main__":
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=8000,
-        workers=1,  # Set to 1 worker for single vCPU
-        log_level="info",  # Set to info to reduce verbosity
-        timeout_keep_alive=30
-    )
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
+    
