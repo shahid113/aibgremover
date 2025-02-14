@@ -15,6 +15,7 @@ import os
 import hashlib
 from datetime import datetime
 import uvicorn
+import onnxruntime
 
 # Configure logging
 logging.basicConfig(
