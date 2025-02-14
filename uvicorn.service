@@ -1,0 +1,12 @@
+[Unit]
+Description=FastAPI Background Removal Service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/root/background-removal-api
+ExecStart=/root/background-removal-api/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000 --workers 1
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
